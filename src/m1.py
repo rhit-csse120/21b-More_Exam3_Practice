@@ -46,7 +46,7 @@ import testing_helper
 
 
 def main():
-    """ Calls the   TEST   functions in this module. """
+    """Calls the   TEST   functions in this module."""
     run_test_practice1()
 
 
@@ -61,6 +61,7 @@ def main():
 #   You should  ** CALL **  those functions as needed in implementing the
 #   other functions.  After you have READ this, change its _TODO_ to DONE.
 ###############################################################################
+
 
 def is_prime(n):
     """
@@ -111,98 +112,87 @@ def sum_of_digits(number):
 
 
 def run_test_practice1():
-    """ Tests the   practice1   function. """
+    """Tests the   practice1   function."""
     print()
-    print('--------------------------------------------------')
-    print('Testing the   practice1  function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   practice1  function:")
+    print("--------------------------------------------------")
 
-    format_string = '    practice1( {} )'
+    format_string = "    practice1( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
-    numbers = [[32, 110, 72, 64, 61],  # sum_of_digits: 5, 2, 9, 10, 7
-               [],
-               [110, 91, 42]]  # sum_of_digits: 2, 10, 6
+    numbers = [
+        [32, 110, 72, 64, 61],  # sum_of_digits: 5, 2, 9, 10, 7
+        [],
+        [110, 91, 42],
+    ]  # sum_of_digits: 2, 10, 6
     expected = [32, 110, 61, 110]  # Items associated with prime sum_of_digits
-    print_expected_result_of_test([numbers], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([numbers], expected, test_results, format_string)
     actual = practice1(numbers)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 2:
-    numbers = [[825, 11, 140],  # sum_of_digits: 15, 2, 5
-               [32, 110, 72, 64, 61],  # sum_of_digits: 5, 2, 9, 10, 7
-               [],
-               [111, 91, 59, 4441]]  # sum_of_digits: 3, 10, 14, 13
+    numbers = [
+        [825, 11, 140],  # sum_of_digits: 15, 2, 5
+        [32, 110, 72, 64, 61],  # sum_of_digits: 5, 2, 9, 10, 7
+        [],
+        [111, 91, 59, 4441],
+    ]  # sum_of_digits: 3, 10, 14, 13
     expected = [11, 140, 32, 110, 61, 111, 4441]  # For primes 5, 2, 7, 3 and 13
-    print_expected_result_of_test([numbers], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([numbers], expected, test_results, format_string)
     actual = practice1(numbers)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 3:
-    numbers = [[100000],  # sum_of_digits: 1, and 1 is treated as prime
-               [0]]  # sum_of_digits: 0, and 0 is treated as prime
+    numbers = [
+        [100000],  # sum_of_digits: 1, and 1 is treated as prime
+        [0],
+    ]  # sum_of_digits: 0, and 0 is treated as prime
     expected = [100000, 0]  # Items associated with primes 1 and 0, respectively
-    print_expected_result_of_test([numbers], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([numbers], expected, test_results, format_string)
     actual = practice1(numbers)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 4:  Same as Test 3, but tuples
-    numbers = ((100000,),  # sum_of_digits: 1, and 1 is treated as prime
-               (0,))  # sum_of_digits: 0, and 0 is treated as prime
+    numbers = (
+        (100000,),  # sum_of_digits: 1, and 1 is treated as prime
+        (0,),
+    )  # sum_of_digits: 0, and 0 is treated as prime
     expected = [100000, 0]  # Items associated with primes 1 and 0, respectively
-    print_expected_result_of_test([numbers], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([numbers], expected, test_results, format_string)
     actual = practice1(numbers)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 5:
-    numbers = [(2, 3, 5, 7),
-               (11, 16, 92, 29, 913),
-               [29, 9992, 2999, 9299, 9929, 9992]]
-    expected = [2, 3, 5, 7,
-                11, 16, 92, 29, 913,
-                29, 9992, 2999, 9299, 9929, 9992]
-    print_expected_result_of_test([numbers], expected, test_results,
-                                  format_string)
+    numbers = [(2, 3, 5, 7), (11, 16, 92, 29, 913), [29, 9992, 2999, 9299, 9929, 9992]]
+    expected = [2, 3, 5, 7, 11, 16, 92, 29, 913, 29, 9992, 2999, 9299, 9929, 9992]
+    print_expected_result_of_test([numbers], expected, test_results, format_string)
     actual = practice1(numbers)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 6:
-    numbers = [(22, 213, 35, 27),
-               (211, 13, 17, 19, 123),
-               [219, 31, 37]]
+    numbers = [(22, 213, 35, 27), (211, 13, 17, 19, 123), [219, 31, 37]]
     expected = []
-    print_expected_result_of_test([numbers], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([numbers], expected, test_results, format_string)
     actual = practice1(numbers)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 7:
-    numbers = [(2, 3),
-               (11, 13, 17, 19, 23, 100, 1000),
-               [29, 31]]
+    numbers = [(2, 3), (11, 13, 17, 19, 23, 100, 1000), [29, 31]]
     expected = [2, 3, 11, 23, 100, 1000, 29]
-    print_expected_result_of_test([numbers], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([numbers], expected, test_results, format_string)
     actual = practice1(numbers)
     print_actual_result_of_test(expected, actual, test_results)
 
     # Test 8 and following:
     random.seed(42)  # Ensures repeatability
-    numbers = [[11111, 4, 6, 19],
-               [],
-               [60, 62, 63, 1111, 1, 1111, 4, 6666, 66, 6],
-               []]
+    numbers = [[11111, 4, 6, 19], [], [60, 62, 63, 1111, 1, 1111, 4, 6666, 66, 6], []]
     for k in range(100):
         random.shuffle(numbers[0])
         random.shuffle(numbers[2])
         expected = [11111, 1]
-        print_expected_result_of_test([numbers], expected, test_results,
-                                      format_string)
+        print_expected_result_of_test([numbers], expected, test_results, format_string)
         actual = practice1(numbers)
         print_actual_result_of_test(expected, actual, test_results)
 
@@ -256,7 +246,7 @@ def practice1(sequence_of_sequences):
 
       Type hints:
         :type sequence_of_sequences: list[list[int]] | tuple[list[int]] | tuple[tuple[int]] | list[tuple[int]]
-     """
+    """
     ###########################################################################
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
@@ -275,17 +265,18 @@ def practice1(sequence_of_sequences):
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################
-def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=""):
-    testing_helper.print_expected_result_of_test(arguments, expected,
-                                                 test_results, format_string,
-                                                 suffix)
+def print_expected_result_of_test(
+    arguments, expected, test_results, format_string, suffix=""
+):
+    testing_helper.print_expected_result_of_test(
+        arguments, expected, test_results, format_string, suffix
+    )
 
 
-def print_actual_result_of_test(expected, actual, test_results,
-                                precision=None):
-    testing_helper.print_actual_result_of_test(expected, actual,
-                                               test_results, precision)
+def print_actual_result_of_test(expected, actual, test_results, precision=None):
+    testing_helper.print_actual_result_of_test(
+        expected, actual, test_results, precision
+    )
 
 
 def print_summary_of_test_results(test_results):
@@ -305,14 +296,17 @@ else:
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
-# The   try .. except   prevents error messages on the console from being
-# intermingled with ordinary output to the console.
+# The  IF  statement helps prevent   main   from running
+# when we are doing special testing within a testing framework.
+# The   try .. except   helps prevent error messages on the console
+# from being intermingled with ordinary output to the console.
 # -----------------------------------------------------------------------------
-try:
-    main()
-except Exception:
-    print("ERROR - While running this test,", color="red")
-    print("your code raised the following exception:", color="red")
-    print()
-    time.sleep(1)
-    raise
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        print("ERROR - While running this test,", color="red")
+        print("your code raised the following exception:", color="red")
+        print()
+        time.sleep(1)
+        raise

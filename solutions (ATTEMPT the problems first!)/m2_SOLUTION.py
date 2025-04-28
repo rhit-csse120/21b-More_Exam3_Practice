@@ -44,7 +44,7 @@ import testing_helper
 
 
 def main():
-    """ Calls the   TEST   functions in this module. """
+    """Calls the   TEST   functions in this module."""
     run_test_mutate()
 
 
@@ -59,6 +59,7 @@ def main():
 #   You should  ** CALL **  those functions as needed in implementing the
 #   other functions.  After you have READ this, change its _TODO_ to DONE.
 ###############################################################################
+
 
 def is_prime(n):
     """
@@ -109,281 +110,336 @@ def sum_of_digits(number):
 
 
 def run_test_mutate():
-    """ Tests the   mutate   function. """
+    """Tests the   mutate   function."""
     print()
-    print('--------------------------------------------------')
-    print('Testing the   mutate  function:')
-    print('--------------------------------------------------')
+    print("--------------------------------------------------")
+    print("Testing the   mutate  function:")
+    print("--------------------------------------------------")
 
     format_string = "mutate( {} )"
     test_results = [0, 0]  # Number of tests passed, failed.
 
     # Test 1:
     test_number = 1
-    original_argument = [[4, 110, 23, 7, 29],
-                         [],
-                         [22, 13, 42, 5],
-                         [21, 21, 28, 6, 28, 15]]
+    original_argument = [
+        [4, 110, 23, 7, 29],
+        [],
+        [22, 13, 42, 5],
+        [21, 21, 28, 6, 28, 15],
+    ]
     m = 0
-    correct_argument_value_after_function_call = \
-        [[4, 2, 23, 7, 11],  # 110 and 29 have been replaced with 2 and 11
-         [],
-         [22, 13, 6, 5],  # 42 has been replaced with 6
-         [21, 21, 10, 6, 10, 15]]
+    correct_argument_value_after_function_call = [
+        [4, 2, 23, 7, 11],  # 110 and 29 have been replaced with 2 and 11
+        [],
+        [22, 13, 6, 5],  # 42 has been replaced with 6
+        [21, 21, 10, 6, 10, 15],
+    ]
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 2: Same as Test 1 except m=1
     test_number = 2
-    original_argument = [[4, 110, 23, 7, 29],
-                         [],
-                         [22, 13, 42, 5],
-                         [21, 21, 28, 6, 28, 15]]
+    original_argument = [
+        [4, 110, 23, 7, 29],
+        [],
+        [22, 13, 42, 5],
+        [21, 21, 28, 6, 28, 15],
+    ]
     m = 1
-    correct_argument_value_after_function_call = \
-        [[4, 110, 23, 7, 29],
-         [],
-         [22, 13, 42, 5],
-         [21, 21, 28, 6, 28, 15]]
+    correct_argument_value_after_function_call = [
+        [4, 110, 23, 7, 29],
+        [],
+        [22, 13, 42, 5],
+        [21, 21, 28, 6, 28, 15],
+    ]
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 3: Same as Test 1 except m=2
     test_number = 3
-    original_argument = [[4, 110, 23, 7, 29],
-                         [],
-                         [22, 13, 42, 5],
-                         [21, 21, 28, 6, 28, 15]]
+    original_argument = [
+        [4, 110, 23, 7, 29],
+        [],
+        [22, 13, 42, 5],
+        [21, 21, 28, 6, 28, 15],
+    ]
     m = 2
-    correct_argument_value_after_function_call = \
-        [[4, 2, 5, 7, 11],  # 110, 23 and 29 have been replaced with 2, 5 and 11
-         [],
-         [4, 13, 6, 5],  # 22 and 42 have been replaced with 4 and 6
-         [3, 3, 10, 6, 10, 6]]  # 21, 21, 28, 28 and 15 have been replaced
+    correct_argument_value_after_function_call = [
+        [4, 2, 5, 7, 11],  # 110, 23 and 29 have been replaced with 2, 5 and 11
+        [],
+        [4, 13, 6, 5],  # 22 and 42 have been replaced with 4 and 6
+        [3, 3, 10, 6, 10, 6],
+    ]  # 21, 21, 28, 28 and 15 have been replaced
     # with 3, 3, 10, 10 and 6
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 4: Same as Test 1 except m=3
     test_number = 4
-    original_argument = [[4, 110, 23, 7, 29],
-                         [],
-                         [22, 13, 42, 5],
-                         [21, 21, 28, 6, 28, 15]]
+    original_argument = [
+        [4, 110, 23, 7, 29],
+        [],
+        [22, 13, 42, 5],
+        [21, 21, 28, 6, 28, 15],
+    ]
     m = 3
-    correct_argument_value_after_function_call = \
-        [[4, 110, 23, 7, 29],
-         [],
-         [22, 13, 42, 5],
-         [21, 21, 28, 6, 28, 15]]
+    correct_argument_value_after_function_call = [
+        [4, 110, 23, 7, 29],
+        [],
+        [22, 13, 42, 5],
+        [21, 21, 28, 6, 28, 15],
+    ]
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 5: Same as Test 1 except tuple instead of list
     test_number = 5
-    original_argument = ([4, 110, 23, 7, 29],
-                         [],
-                         [22, 13, 42, 5],
-                         [21, 21, 28, 6, 28, 15])
+    original_argument = (
+        [4, 110, 23, 7, 29],
+        [],
+        [22, 13, 42, 5],
+        [21, 21, 28, 6, 28, 15],
+    )
     m = 0
-    correct_argument_value_after_function_call = \
-        ([4, 2, 23, 7, 11],  # 110 and 29 have been replaced with 2 and 11
-         [],
-         [22, 13, 6, 5],  # 42 has been replaced with 6
-         [21, 21, 10, 6, 10, 15])
+    correct_argument_value_after_function_call = (
+        [4, 2, 23, 7, 11],  # 110 and 29 have been replaced with 2 and 11
+        [],
+        [22, 13, 6, 5],  # 42 has been replaced with 6
+        [21, 21, 10, 6, 10, 15],
+    )
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 6: A different sequence of sequences
     test_number = 6
-    original_argument = ([],
-                         [11, 20, 5, 17, 4, 85, 85, 85],
-                         [38, 8, 38, 55, 41],
-                         [38, 8, 7, 55, 6, 7, 17, 3],
-                         [65, 26],
-                         [12, 13, 14, 222, 5, 23])
+    original_argument = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     m = 0
-    correct_argument_value_after_function_call = \
-        ([],
-         [11, 20, 5, 17, 4, 85, 85, 85],
-         [38, 8, 38, 55, 41],
-         [38, 8, 7, 55, 6, 7, 17, 3],
-         [65, 26],
-         [12, 13, 14, 222, 5, 23])
+    correct_argument_value_after_function_call = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 7: Same as Test 6 except m=1
     test_number = 7
-    original_argument = ([],
-                         [11, 20, 5, 17, 4, 85, 85, 85],
-                         [38, 8, 38, 55, 41],
-                         [38, 8, 7, 55, 6, 7, 17, 3],
-                         [65, 26],
-                         [12, 13, 14, 222, 5, 23])
+    original_argument = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     m = 1
-    correct_argument_value_after_function_call = \
-        ([],
-         [11, 2, 5, 8, 4, 13, 13, 13],
-         [11, 8, 11, 10, 5],
-         [11, 8, 7, 10, 6, 7, 8, 3],
-         [11, 8],
-         [3, 4, 5, 6, 5, 5])
+    correct_argument_value_after_function_call = (
+        [],
+        [11, 2, 5, 8, 4, 13, 13, 13],
+        [11, 8, 11, 10, 5],
+        [11, 8, 7, 10, 6, 7, 8, 3],
+        [11, 8],
+        [3, 4, 5, 6, 5, 5],
+    )
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 8: Same as Test 6 except m=2
     test_number = 8
-    original_argument = ([],
-                         [11, 20, 5, 17, 4, 85, 85, 85],
-                         [38, 8, 38, 55, 41],
-                         [38, 8, 7, 55, 6, 7, 17, 3],
-                         [65, 26],
-                         [12, 13, 14, 222, 5, 23])
+    original_argument = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     m = 2
-    correct_argument_value_after_function_call = \
-        ([],
-         [11, 20, 5, 17, 4, 13, 13, 13],
-         [38, 8, 38, 10, 41],
-         [38, 8, 7, 10, 6, 7, 17, 3],
-         [11, 26],
-         [12, 13, 14, 6, 5, 23])
+    correct_argument_value_after_function_call = (
+        [],
+        [11, 20, 5, 17, 4, 13, 13, 13],
+        [38, 8, 38, 10, 41],
+        [38, 8, 7, 10, 6, 7, 17, 3],
+        [11, 26],
+        [12, 13, 14, 6, 5, 23],
+    )
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 9: Same as Test 6 except m=3
     test_number = 9
-    original_argument = ([],
-                         [11, 20, 5, 17, 4, 85, 85, 85],
-                         [38, 8, 38, 55, 41],
-                         [38, 8, 7, 55, 6, 7, 17, 3],
-                         [65, 26],
-                         [12, 13, 14, 222, 5, 23])
+    original_argument = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     m = 3
-    correct_argument_value_after_function_call = \
-        ([],
-         [2, 2, 5, 8, 4, 13, 13, 13],
-         [11, 8, 11, 10, 5],
-         [11, 8, 7, 10, 6, 7, 8, 3],
-         [11, 8],
-         [3, 4, 5, 6, 5, 5])
+    correct_argument_value_after_function_call = (
+        [],
+        [2, 2, 5, 8, 4, 13, 13, 13],
+        [11, 8, 11, 10, 5],
+        [11, 8, 7, 10, 6, 7, 8, 3],
+        [11, 8],
+        [3, 4, 5, 6, 5, 5],
+    )
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 10: Same as Test 6 except m=4
     test_number = 10
-    original_argument = ([],
-                         [11, 20, 5, 17, 4, 85, 85, 85],
-                         [38, 8, 38, 55, 41],
-                         [38, 8, 7, 55, 6, 7, 17, 3],
-                         [65, 26],
-                         [12, 13, 14, 222, 5, 23])
+    original_argument = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     m = 4
-    correct_argument_value_after_function_call = \
-        ([],
-         [11, 20, 5, 17, 4, 85, 85, 85],
-         [38, 8, 38, 55, 41],
-         [38, 8, 7, 55, 6, 7, 17, 3],
-         [65, 26],
-         [12, 13, 14, 222, 5, 23])
+    correct_argument_value_after_function_call = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # Test 11: Same as Test 6 except m=5
     test_number = 11
-    original_argument = ([],
-                         [11, 20, 5, 17, 4, 85, 85, 85],
-                         [38, 8, 38, 55, 41],
-                         [38, 8, 7, 55, 6, 7, 17, 3],
-                         [65, 26],
-                         [12, 13, 14, 222, 5, 23])
+    original_argument = (
+        [],
+        [11, 20, 5, 17, 4, 85, 85, 85],
+        [38, 8, 38, 55, 41],
+        [38, 8, 7, 55, 6, 7, 17, 3],
+        [65, 26],
+        [12, 13, 14, 222, 5, 23],
+    )
     m = 5
-    correct_argument_value_after_function_call = \
-        ([],
-         [11, 2, 5, 8, 4, 13, 13, 13],
-         [11, 8, 11, 10, 5],
-         [11, 8, 7, 10, 6, 7, 8, 3],
-         [11, 8],
-         [12, 13, 5, 6, 5, 5])
+    correct_argument_value_after_function_call = (
+        [],
+        [11, 2, 5, 8, 4, 13, 13, 13],
+        [11, 8, 11, 10, 5],
+        [11, 8, 7, 10, 6, 7, 8, 3],
+        [11, 8],
+        [12, 13, 5, 6, 5, 5],
+    )
     correct_returned_value = None
-    run_test(mutate,
-             original_argument,
-             test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             [m])
+    run_test(
+        mutate,
+        original_argument,
+        test_number,
+        correct_returned_value,
+        correct_argument_value_after_function_call,
+        test_results,
+        format_string,
+        [m],
+    )
 
     # SUMMARY of test results:
     print_summary_of_test_results(test_results)
@@ -458,7 +514,7 @@ def mutate(sequence_of_lists, m):
 
       Type hints:
         :type sequence_of_lists: list[list[int]] | tuple[list[int]]
-     """
+    """
     ###########################################################################
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
@@ -467,7 +523,7 @@ def mutate(sequence_of_lists, m):
     #    **  the   appropriate   function(s) that are DEFINED ABOVE.
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
-    #    DIFFICULTY:     8
+    #    DIFFICULTY:     7
     #    TIME ESTIMATE:  15 to 20 minutes.
     # -------------------------------------------------------------------------
     ###########################################################################
@@ -491,12 +547,16 @@ def mutate(sequence_of_lists, m):
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################
-def run_test(function_to_test, argument, run_test_number,
-             correct_returned_value,
-             correct_argument_value_after_function_call,
-             test_results,
-             format_string,
-             additional_arguments):
+def run_test(
+    function_to_test,
+    argument,
+    run_test_number,
+    correct_returned_value,
+    correct_argument_value_after_function_call,
+    test_results,
+    format_string,
+    additional_arguments,
+):
     """
     Runs a test, by calling the given function on the given argument.
     The function should return the given correct_returned_value.
@@ -512,10 +572,8 @@ def run_test(function_to_test, argument, run_test_number,
 
     actual_returned_value = function_to_test(argument, *additional_arguments)
 
-    passed_check1 = check_returned_value(actual_returned_value,
-                                         correct_returned_value)
-    passed_check2 = check_argument(argument,
-                                   correct_argument_value_after_function_call)
+    passed_check1 = check_returned_value(actual_returned_value, correct_returned_value)
+    passed_check2 = check_argument(argument, correct_argument_value_after_function_call)
 
     print("  Expected result: ", correct_argument_value_after_function_call)
     print("  Actual result:   ", argument)
@@ -523,12 +581,10 @@ def run_test(function_to_test, argument, run_test_number,
     print("  Actual return:   ", actual_returned_value)
 
     if passed_check1 and passed_check2:
-        print("  Your code PASSES Test {}.".format(run_test_number),
-              color="blue")
+        print("  Your code PASSES Test {}.".format(run_test_number), color="blue")
         test_results[0] += 1
     else:
-        print("   Your code FAILS Test {}".format(run_test_number),
-              color="red")
+        print("   Your code FAILS Test {}".format(run_test_number), color="red")
         test_results[1] += 1
 
 
@@ -570,17 +626,18 @@ def check_argument(actual_argument_value, correct_argument_value):
         return False
 
 
-def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=""):
-    testing_helper.print_expected_result_of_test(arguments, expected,
-                                                 test_results, format_string,
-                                                 suffix)
+def print_expected_result_of_test(
+    arguments, expected, test_results, format_string, suffix=""
+):
+    testing_helper.print_expected_result_of_test(
+        arguments, expected, test_results, format_string, suffix
+    )
 
 
-def print_actual_result_of_test(expected, actual, test_results,
-                                precision=None):
-    testing_helper.print_actual_result_of_test(expected, actual,
-                                               test_results, precision)
+def print_actual_result_of_test(expected, actual, test_results, precision=None):
+    testing_helper.print_actual_result_of_test(
+        expected, actual, test_results, precision
+    )
 
 
 def print_summary_of_test_results(test_results):

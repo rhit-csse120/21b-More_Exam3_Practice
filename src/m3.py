@@ -46,12 +46,12 @@ import random
 
 
 def main():
-    """ Calls the   TEST   functions in this module. """
+    """Calls the   TEST   functions in this module."""
     run_test_get_second_largest()
 
 
 def run_test_get_second_largest():
-    """ Tests the   get_second_largest   function. """
+    """Tests the   get_second_largest   function."""
     print()
     print("--------------------------------------------------")
     print("Testing the   get_second_largest   function:")
@@ -64,8 +64,7 @@ def run_test_get_second_largest():
     expected = 100
     sequence = [940, 390, 83, 5, 403, 100, 40]
     m = 4
-    print_expected_result_of_test([m, sequence], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([m, sequence], expected, test_results, format_string)
     actual = get_second_largest(m, sequence)
     print_actual_result_of_test(expected, actual, test_results)
 
@@ -73,8 +72,7 @@ def run_test_get_second_largest():
     expected = 40
     sequence = [940, 390, 83, 5, 403, 100, 40]
     m = 2
-    print_expected_result_of_test([m, sequence], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([m, sequence], expected, test_results, format_string)
     actual = get_second_largest(m, sequence)
     print_actual_result_of_test(expected, actual, test_results)
 
@@ -82,8 +80,7 @@ def run_test_get_second_largest():
     expected = 390
     sequence = [940, 390, 83, 5, 403, 100, 40]
     m = 6
-    print_expected_result_of_test([m, sequence], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([m, sequence], expected, test_results, format_string)
     actual = get_second_largest(m, sequence)
     print_actual_result_of_test(expected, actual, test_results)
 
@@ -91,8 +88,7 @@ def run_test_get_second_largest():
     expected = 100
     sequence = [940, 390, 83, 5, 403, 100, 40]
     m = 3
-    print_expected_result_of_test([m, sequence], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([m, sequence], expected, test_results, format_string)
     actual = get_second_largest(m, sequence)
     print_actual_result_of_test(expected, actual, test_results)
 
@@ -100,8 +96,7 @@ def run_test_get_second_largest():
     expected = 100
     sequence = [940, 390, 83, 5, 403, 100, 40]
     m = 5
-    print_expected_result_of_test([m, sequence], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([m, sequence], expected, test_results, format_string)
     actual = get_second_largest(m, sequence)
     print_actual_result_of_test(expected, actual, test_results)
 
@@ -109,8 +104,7 @@ def run_test_get_second_largest():
     expected = 403
     sequence = [940, 390, 83, 5, 403, 100, 40]
     m = 7
-    print_expected_result_of_test([m, sequence], expected, test_results,
-                                  format_string)
+    print_expected_result_of_test([m, sequence], expected, test_results, format_string)
     actual = get_second_largest(m, sequence)
     print_actual_result_of_test(expected, actual, test_results)
 
@@ -122,8 +116,9 @@ def run_test_get_second_largest():
     for k in range(1000):
         test_sequence = sequence.copy()
         random.shuffle(test_sequence)
-        print_expected_result_of_test([m, test_sequence], expected,
-                                      test_results, format_string)
+        print_expected_result_of_test(
+            [m, test_sequence], expected, test_results, format_string
+        )
         actual = get_second_largest(m, test_sequence)
         print_actual_result_of_test(expected, actual, test_results)
     # SUMMARY of test results:
@@ -176,7 +171,7 @@ def get_second_largest(m, sequence):
     #   Ways that MUTATE the list will get most, but not all, of the credit.
     #  ------------------------------------------------------------------------
     #  DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
-    #    DIFFICULTY:     10
+    #    DIFFICULTY:     8
     #    TIME ESTIMATE:  20 minutes.
     # -------------------------------------------------------------------------
     ###########################################################################
@@ -186,17 +181,18 @@ def get_second_largest(m, sequence):
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################
-def print_expected_result_of_test(arguments, expected,
-                                  test_results, format_string, suffix=""):
-    testing_helper.print_expected_result_of_test(arguments, expected,
-                                                 test_results, format_string,
-                                                 suffix)
+def print_expected_result_of_test(
+    arguments, expected, test_results, format_string, suffix=""
+):
+    testing_helper.print_expected_result_of_test(
+        arguments, expected, test_results, format_string, suffix
+    )
 
 
-def print_actual_result_of_test(expected, actual, test_results,
-                                precision=None):
-    testing_helper.print_actual_result_of_test(expected, actual,
-                                               test_results, precision)
+def print_actual_result_of_test(expected, actual, test_results, precision=None):
+    testing_helper.print_actual_result_of_test(
+        expected, actual, test_results, precision
+    )
 
 
 def print_summary_of_test_results(test_results):
@@ -219,11 +215,12 @@ else:
 # The   try ... except   prevents error messages on the console from being
 # intermingled with ordinary output to the console.
 # -----------------------------------------------------------------------------
-try:
-    main()
-except Exception:
-    print("ERROR - While running this test,", color="red")
-    print("your code raised the following exception:", color="red")
-    print()
-    time.sleep(1)
-    raise
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        print("ERROR - While running this test,", color="red")
+        print("your code raised the following exception:", color="red")
+        print()
+        time.sleep(1)
+        raise
